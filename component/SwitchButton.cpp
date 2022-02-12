@@ -24,15 +24,14 @@ void SwitchButton::setTextColors(const QColor on, const QColor off)
     mLabelColorOff = off;
 }
 
-void SwitchButton::setLabels(const QString on, const QString off) {
+void SwitchButton::setLabels(const QString on, const QString off)
+{
     mBtnLabelOn = on;
     mBtnLabelOff = off;
-    setMinimumWidth(fontMetrics().boundingRect(mBtnLabelOff).width()
-                    + fontMetrics().boundingRect(mBtnLabelOff).width()
-                    + fontMetrics().boundingRect(mBtnLabelOff).height() * 2);
+    setMinimumWidth(fontMetrics().boundingRect(mBtnLabelOff).width() + fontMetrics().boundingRect(mBtnLabelOff).width() + fontMetrics().boundingRect(mBtnLabelOff).height() * 2);
 }
 
-void SwitchButton::paintEvent(QPaintEvent* event)
+void SwitchButton::paintEvent(QPaintEvent *event)
 {
     QPen pen;
     QString label;
@@ -72,7 +71,7 @@ void SwitchButton::paintEvent(QPaintEvent* event)
     painter.setPen(pen);
     brush.setColor(Qt::white);
     painter.setBrush(brush);
-    if(isChecked())
+    if (isChecked())
     {
         rect.setRect(width() + margin * 3 - height(), margin * 3, height() - 6 * margin, height() - 6 * margin);
     }

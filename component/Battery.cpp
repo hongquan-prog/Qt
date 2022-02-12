@@ -46,7 +46,7 @@ void Battery::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setRenderHint(QPainter::TextAntialiasing);
 
-    //绘制圆角矩形边框
+    // 绘制圆角矩形边框
     pen.setWidth(mPenWidth);
     pen.setColor(mColorBackdrop);
     painter.setPen(pen);
@@ -62,7 +62,7 @@ void Battery::paintEvent(QPaintEvent *event)
     painter.drawRoundedRect(rect, 5, 5);
 
     // 绘制剩余电量
-    if(mPowerValue > mWarnValue)
+    if (mPowerValue > mWarnValue)
     {
         brush.setColor(mColorPower);
         pen.setColor(mColorPower);
@@ -83,7 +83,7 @@ void Battery::paintEvent(QPaintEvent *event)
 
 void Battery::setPowerValue(int value)
 {
-    if((value >= 0) && (value <= 100))
+    if ((value >= 0) && (value <= 100))
     {
         mPowerValue = value;
         emit powerValueChanged(mPowerValue);
@@ -98,7 +98,7 @@ int Battery::getPowerValue()
 
 void Battery::setWarnValue(int value)
 {
-    if((value >= 0) && (value <= 100))
+    if ((value >= 0) && (value <= 100))
     {
         mWarnValue = value;
         repaint();
